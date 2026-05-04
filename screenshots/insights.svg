@@ -1,0 +1,60 @@
+<svg width="360" height="720" viewBox="0 0 360 720" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="hero" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FF5C7A"/>
+      <stop offset="100%" stop-color="#C0394F"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="360" height="720" fill="#13131F"/>
+
+  <rect width="360" height="56" fill="#1C1C2A"/>
+  <text x="20" y="36" fill="white" font-size="14">☰</text>
+  <text x="48" y="36" fill="white" font-size="15" font-weight="600">Insights</text>
+
+  <!-- Hero -->
+  <rect x="0" y="56" width="360" height="100" fill="url(#hero)"/>
+  <text x="24" y="100" fill="white" font-size="22" font-weight="700">💡 Insights</text>
+  <text x="24" y="124" fill="#FFD0D8" font-size="12">Tips to fix your bad habits</text>
+
+  <!-- Bad habit card 1 -->
+  <rect x="20" y="172" width="320" height="180" rx="18" fill="#252537" stroke="#FF5C7A" stroke-width="2"/>
+  <rect x="36" y="188" width="64" height="22" rx="10" fill="#3D1A22"/>
+  <text x="68" y="203" fill="#FF5C7A" font-size="9" font-weight="700" text-anchor="middle">⚠️ BAD</text>
+  <text x="110" y="205" fill="white" font-size="15" font-weight="700">Junk food</text>
+  <text x="36" y="226" fill="#7A7A8E" font-size="11">Category: Diet &amp; Nutrition  •  Logged 1x</text>
+  <line x1="36" y1="240" x2="324" y2="240" stroke="#2F2F44" stroke-width="1"/>
+
+  <text x="36" y="260" fill="#FF5C7A" font-size="9" letter-spacing="2" font-weight="700">💡 HOW TO FIX IT</text>
+  <text x="36" y="278" fill="#B4B4C8" font-size="11">Poor diet choices increase risk of obesity,</text>
+  <text x="36" y="292" fill="#B4B4C8" font-size="11">diabetes, and heart disease.</text>
+
+  <text x="36" y="316" fill="#FFB547" font-size="9" letter-spacing="2" font-weight="700">✔ ACTION STEPS</text>
+  <text x="36" y="334" fill="#B4B4C8" font-size="10">• Meal prep on Sundays  • Add veggies</text>
+
+  <!-- Bad habit card 2 -->
+  <rect x="20" y="364" width="320" height="180" rx="18" fill="#252537" stroke="#FF5C7A" stroke-width="2"/>
+  <rect x="36" y="380" width="64" height="22" rx="10" fill="#3D1A22"/>
+  <text x="68" y="395" fill="#FF5C7A" font-size="9" font-weight="700" text-anchor="middle">⚠️ BAD</text>
+  <text x="110" y="397" fill="white" font-size="15" font-weight="700">Late night scrolling</text>
+  <text x="36" y="418" fill="#7A7A8E" font-size="11">Category: Screen Time  •  Logged 1x</text>
+  <line x1="36" y1="432" x2="324" y2="432" stroke="#2F2F44" stroke-width="1"/>
+
+  <text x="36" y="452" fill="#FF5C7A" font-size="9" letter-spacing="2" font-weight="700">💡 HOW TO FIX IT</text>
+  <text x="36" y="470" fill="#B4B4C8" font-size="11">Excessive screen time causes eye strain,</text>
+  <text x="36" y="484" fill="#B4B4C8" font-size="11">anxiety, and disrupted sleep.</text>
+
+  <text x="36" y="508" fill="#FFB547" font-size="9" letter-spacing="2" font-weight="700">✔ ACTION STEPS</text>
+  <text x="36" y="526" fill="#B4B4C8" font-size="10">• Use app timers  • No phone before bed</text>
+
+  <!-- General tips -->
+  <text x="20" y="572" fill="#7A7A8E" font-size="10" letter-spacing="2">GENERAL WELLNESS TIPS</text>
+  <rect x="20" y="586" width="320" height="118" rx="16" fill="#1C2040"/>
+  <text x="36" y="608" fill="white" font-size="12">🌙  Get 7-9 hours of sleep</text>
+  <line x1="36" y1="618" x2="324" y2="618" stroke="#2F2F44" stroke-width="1"/>
+  <text x="36" y="638" fill="white" font-size="12">💧  Drink at least 8 glasses of water</text>
+  <line x1="36" y1="648" x2="324" y2="648" stroke="#2F2F44" stroke-width="1"/>
+  <text x="36" y="668" fill="white" font-size="12">🏃  Move 30+ min a day</text>
+  <line x1="36" y1="678" x2="324" y2="678" stroke="#2F2F44" stroke-width="1"/>
+  <text x="36" y="698" fill="white" font-size="12">📵  Limit screen time before bed</text>
+</svg>

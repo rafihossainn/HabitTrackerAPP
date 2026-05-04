@@ -1,0 +1,40 @@
+<svg width="360" height="720" viewBox="0 0 360 720" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, system-ui, sans-serif">
+  <rect width="360" height="720" fill="#13131F"/>
+
+  <!-- Nav -->
+  <rect width="360" height="56" fill="#1C1C2A"/>
+  <text x="20" y="36" fill="white" font-size="14">☰</text>
+  <text x="48" y="36" fill="white" font-size="15" font-weight="600">Progress</text>
+
+  <text x="24" y="92" fill="#7A7A8E" font-size="10" letter-spacing="2">THIS WEEK</text>
+  <text x="24" y="124" fill="white" font-size="24" font-weight="700">Weekly Goal Ring</text>
+  <text x="24" y="148" fill="#B4B4C8" font-size="12">Animates from 0 to your current %</text>
+
+  <!-- Ring card -->
+  <rect x="20" y="168" width="320" height="280" rx="18" fill="#252537" stroke="#2F2F44" stroke-width="1"/>
+
+  <!-- Ring track -->
+  <circle cx="180" cy="308" r="92" fill="none" stroke="#2F2F44" stroke-width="22" stroke-linecap="round"/>
+  <!-- Ring progress (about 71% / 5 of 7) -->
+  <path d="M 180 216 A 92 92 0 1 1 119.94 379.5"
+        fill="none" stroke="#7C5CFF" stroke-width="22" stroke-linecap="round"/>
+  <circle cx="119.94" cy="379.5" r="13" fill="#00D9A3"/>
+
+  <text x="180" y="316" fill="white" font-size="48" font-weight="700" text-anchor="middle">71%</text>
+  <text x="180" y="346" fill="#B4B4C8" font-size="13" text-anchor="middle">of weekly goal</text>
+
+  <!-- Stats cards -->
+  <rect x="20" y="464" width="154" height="86" rx="18" fill="#252537"/>
+  <text x="36" y="488" fill="#7A7A8E" font-size="10" letter-spacing="2">LOGGED</text>
+  <text x="36" y="520" fill="white" font-size="26" font-weight="700">5</text>
+  <text x="36" y="540" fill="#B4B4C8" font-size="12">this week</text>
+
+  <rect x="186" y="464" width="154" height="86" rx="18" fill="#252537"/>
+  <text x="202" y="488" fill="#7A7A8E" font-size="10" letter-spacing="2">TOTAL MIN</text>
+  <text x="202" y="520" fill="white" font-size="26" font-weight="700">240</text>
+  <text x="202" y="540" fill="#B4B4C8" font-size="12">all time</text>
+
+  <!-- Replay button -->
+  <rect x="20" y="566" width="320" height="52" rx="14" fill="#7C5CFF"/>
+  <text x="180" y="598" fill="white" font-size="15" font-weight="700" text-anchor="middle">Replay Animation</text>
+</svg>

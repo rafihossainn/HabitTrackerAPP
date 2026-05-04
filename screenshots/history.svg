@@ -1,0 +1,80 @@
+<svg width="360" height="720" viewBox="0 0 360 720" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="hero" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7C5CFF"/>
+      <stop offset="100%" stop-color="#4A2FD4"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="360" height="720" fill="#13131F"/>
+
+  <rect width="360" height="56" fill="#1C1C2A"/>
+  <text x="20" y="36" fill="white" font-size="14">☰</text>
+  <text x="48" y="36" fill="white" font-size="15" font-weight="600">History</text>
+
+  <!-- Hero -->
+  <rect x="0" y="56" width="360" height="100" fill="url(#hero)"/>
+  <text x="24" y="100" fill="white" font-size="22" font-weight="700">📋 Habit History</text>
+  <text x="24" y="124" fill="#E0D8FF" font-size="12">All your logged habits</text>
+
+  <!-- Summary -->
+  <rect x="20" y="172" width="154" height="50" rx="14" fill="#1A3D35"/>
+  <text x="36" y="194" font-size="14">✅</text>
+  <text x="60" y="195" fill="#00D9A3" font-size="18" font-weight="700">3</text>
+  <text x="60" y="212" fill="#7A7A8E" font-size="10">Good habits</text>
+
+  <rect x="186" y="172" width="154" height="50" rx="14" fill="#3D1A22"/>
+  <text x="202" y="194" font-size="14">⚠️</text>
+  <text x="226" y="195" fill="#FF5C7A" font-size="18" font-weight="700">2</text>
+  <text x="226" y="212" fill="#7A7A8E" font-size="10">Bad habits</text>
+
+  <!-- Entry 1 (Good) -->
+  <rect x="20" y="240" width="320" height="68" rx="16" fill="#252537" stroke="#00D9A3" stroke-width="2"/>
+  <rect x="36" y="252" width="44" height="44" rx="12" fill="#1A3D35"/>
+  <text x="58" y="277" fill="#00D9A3" font-size="9" font-weight="700" text-anchor="middle">✅</text>
+  <text x="58" y="288" fill="#00D9A3" font-size="8" font-weight="700" text-anchor="middle">Good</text>
+  <text x="92" y="270" fill="white" font-size="14" font-weight="700">Morning run</text>
+  <text x="92" y="286" fill="#7A7A8E" font-size="11">Exercise</text>
+  <text x="92" y="300" fill="#4A4A60" font-size="10">May 3, 2026</text>
+  <text x="324" y="282" fill="#00D9A3" font-size="13" font-weight="700" text-anchor="end">30 min</text>
+
+  <!-- Entry 2 (Bad) -->
+  <rect x="20" y="320" width="320" height="68" rx="16" fill="#252537" stroke="#FF5C7A" stroke-width="2"/>
+  <rect x="36" y="332" width="44" height="44" rx="12" fill="#3D1A22"/>
+  <text x="58" y="357" fill="#FF5C7A" font-size="9" font-weight="700" text-anchor="middle">⚠️</text>
+  <text x="58" y="368" fill="#FF5C7A" font-size="8" font-weight="700" text-anchor="middle">Bad</text>
+  <text x="92" y="350" fill="white" font-size="14" font-weight="700">Junk food</text>
+  <text x="92" y="366" fill="#7A7A8E" font-size="11">Diet &amp; Nutrition</text>
+  <text x="92" y="380" fill="#4A4A60" font-size="10">May 2, 2026</text>
+  <text x="324" y="362" fill="#FF5C7A" font-size="13" font-weight="700" text-anchor="end">45 min</text>
+
+  <!-- Entry 3 (Good) -->
+  <rect x="20" y="400" width="320" height="68" rx="16" fill="#252537" stroke="#00D9A3" stroke-width="2"/>
+  <rect x="36" y="412" width="44" height="44" rx="12" fill="#1A3D35"/>
+  <text x="58" y="437" fill="#00D9A3" font-size="9" font-weight="700" text-anchor="middle">✅</text>
+  <text x="58" y="448" fill="#00D9A3" font-size="8" font-weight="700" text-anchor="middle">Good</text>
+  <text x="92" y="430" fill="white" font-size="14" font-weight="700">Reading</text>
+  <text x="92" y="446" fill="#7A7A8E" font-size="11">Mental Health</text>
+  <text x="92" y="460" fill="#4A4A60" font-size="10">May 1, 2026</text>
+  <text x="324" y="442" fill="#00D9A3" font-size="13" font-weight="700" text-anchor="end">20 min</text>
+
+  <!-- Entry 4 (Bad) -->
+  <rect x="20" y="480" width="320" height="68" rx="16" fill="#252537" stroke="#FF5C7A" stroke-width="2"/>
+  <rect x="36" y="492" width="44" height="44" rx="12" fill="#3D1A22"/>
+  <text x="58" y="517" fill="#FF5C7A" font-size="9" font-weight="700" text-anchor="middle">⚠️</text>
+  <text x="58" y="528" fill="#FF5C7A" font-size="8" font-weight="700" text-anchor="middle">Bad</text>
+  <text x="92" y="510" fill="white" font-size="14" font-weight="700">Late night scrolling</text>
+  <text x="92" y="526" fill="#7A7A8E" font-size="11">Screen Time</text>
+  <text x="92" y="540" fill="#4A4A60" font-size="10">Apr 30, 2026</text>
+  <text x="324" y="522" fill="#FF5C7A" font-size="13" font-weight="700" text-anchor="end">90 min</text>
+
+  <!-- Entry 5 (Good) -->
+  <rect x="20" y="560" width="320" height="68" rx="16" fill="#252537" stroke="#00D9A3" stroke-width="2"/>
+  <rect x="36" y="572" width="44" height="44" rx="12" fill="#1A3D35"/>
+  <text x="58" y="597" fill="#00D9A3" font-size="9" font-weight="700" text-anchor="middle">✅</text>
+  <text x="58" y="608" fill="#00D9A3" font-size="8" font-weight="700" text-anchor="middle">Good</text>
+  <text x="92" y="590" fill="white" font-size="14" font-weight="700">Meditation</text>
+  <text x="92" y="606" fill="#7A7A8E" font-size="11">Mental Health</text>
+  <text x="92" y="620" fill="#4A4A60" font-size="10">Apr 29, 2026</text>
+  <text x="324" y="602" fill="#00D9A3" font-size="13" font-weight="700" text-anchor="end">15 min</text>
+</svg>

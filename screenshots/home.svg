@@ -1,0 +1,60 @@
+<svg width="360" height="720" viewBox="0 0 360 720" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="hero" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7C5CFF"/>
+      <stop offset="100%" stop-color="#4A2FD4"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="360" height="720" fill="#13131F"/>
+
+  <!-- Status bar / nav -->
+  <rect width="360" height="56" fill="#1C1C2A"/>
+  <text x="20" y="36" fill="white" font-size="14">☰</text>
+  <text x="48" y="36" fill="white" font-size="15" font-weight="600">Home</text>
+
+  <!-- Hero banner -->
+  <rect x="0" y="56" width="360" height="190" fill="url(#hero)"/>
+  <text x="24" y="100" fill="#E0D8FF" font-size="13">Good day! 👋</text>
+  <text x="24" y="140" fill="white" font-size="26" font-weight="700">Track your habits</text>
+  <rect x="24" y="170" width="170" height="32" rx="16" fill="#00D9A3"/>
+  <text x="38" y="190" fill="#13131F" font-size="12" font-weight="700">5 habits this week</text>
+
+  <text x="24" y="278" fill="#7A7A8E" font-size="10" letter-spacing="2">QUICK ACTIONS</text>
+
+  <!-- Card 1: Progress -->
+  <rect x="20" y="294" width="320" height="68" rx="18" fill="#252537"/>
+  <text x="36" y="322" fill="white" font-size="15" font-weight="700">📊  Animated Progress</text>
+  <text x="36" y="344" fill="#B4B4C8" font-size="12">See your weekly ring animate</text>
+  <rect x="284" y="312" width="40" height="40" rx="12" fill="#7C5CFF"/>
+  <text x="298" y="338" fill="white" font-size="18">→</text>
+
+  <!-- Card 2: Log Habit -->
+  <rect x="20" y="378" width="320" height="68" rx="18" fill="#252537"/>
+  <text x="36" y="406" fill="white" font-size="15" font-weight="700">✏️  Log a Habit</text>
+  <text x="36" y="428" fill="#B4B4C8" font-size="12">Add name, duration and date</text>
+  <rect x="284" y="396" width="40" height="40" rx="12" fill="#00D9A3"/>
+  <text x="298" y="424" fill="#13131F" font-size="22" font-weight="700">+</text>
+
+  <!-- Card 3: History -->
+  <rect x="20" y="462" width="320" height="68" rx="18" fill="#252537"/>
+  <text x="36" y="490" fill="white" font-size="15" font-weight="700">📋  History</text>
+  <text x="36" y="512" fill="#B4B4C8" font-size="12">Browse all saved habits</text>
+  <rect x="284" y="480" width="40" height="40" rx="12" fill="#2F2F44"/>
+  <text x="298" y="506" fill="white" font-size="18">→</text>
+
+  <!-- Card 4: Insights -->
+  <rect x="20" y="546" width="320" height="68" rx="18" fill="#252537"/>
+  <text x="36" y="574" fill="white" font-size="15" font-weight="700">💡  Insights</text>
+  <text x="36" y="596" fill="#B4B4C8" font-size="12">Fix your bad habits with tips</text>
+  <rect x="284" y="564" width="40" height="40" rx="12" fill="#FF5C7A"/>
+  <text x="297" y="591" font-size="18">💡</text>
+
+  <!-- Card 5: Tutorial -->
+  <rect x="20" y="630" width="320" height="68" rx="18" fill="#252537"/>
+  <text x="36" y="658" fill="white" font-size="15" font-weight="700">▶️  Tutorial Video</text>
+  <text x="36" y="680" fill="#B4B4C8" font-size="12">Watch how to use the app</text>
+  <rect x="284" y="648" width="40" height="40" rx="12" fill="#FF5C7A"/>
+  <text x="299" y="675" fill="white" font-size="14">▶</text>
+</svg>
