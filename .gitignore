@@ -1,0 +1,30 @@
+# .NET / MAUI build output
+bin/
+obj/
+*.user
+*.suo
+*.userprefs
+*.binlog
+
+# Visual Studio
+.vs/
+*.swp
+*.tmp
+
+# Android
+*.apk
+*.aab
+*.keystore
+local.properties
+
+# iOS
+*.ipa
+DerivedData/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# NuGet
+*.nupkg
+packages/

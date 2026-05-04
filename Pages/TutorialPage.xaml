@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+x:Class="HabitTrackerApp.Pages.TutorialPage"
+             Title="Tutorial"
+             BackgroundColor="#13131F">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="0">
+
+            <!-- Header -->
+            <Grid HeightRequest="130">
+                <Grid.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#FF5C7A" Offset="0"/>
+                        <GradientStop Color="#C0394F" Offset="1"/>
+                    </LinearGradientBrush>
+                </Grid.Background>
+                <VerticalStackLayout VerticalOptions="Center" Padding="24,0" Spacing="4">
+                    <Label Text="▶️ Tutorial" FontSize="26" FontAttributes="Bold" TextColor="White"/>
+                    <Label Text="Learn how to track your habits" FontSize="13" TextColor="#FFD0D8"/>
+                </VerticalStackLayout>
+            </Grid>
+
+            <VerticalStackLayout Padding="18,20,18,40" Spacing="16">
+
+                <Label Text="WATCH THE OVERVIEW" FontSize="11" TextColor="#7A7A8E"
+                       CharacterSpacing="2" Margin="2,0,0,4"/>
+
+                <!-- Video Player -->
+                <Border BackgroundColor="#000000" StrokeThickness="0"
+                        StrokeShape="RoundRectangle 18" HeightRequest="230">
+                    <WebView x:Name="VideoWebView" HeightRequest="230" BackgroundColor="Black"/>
+                </Border>
+
+                <!-- How to use section -->
+                <Label Text="HOW TO USE THE APP" FontSize="11" TextColor="#7A7A8E"
+                       CharacterSpacing="2" Margin="2,8,0,4"/>
+
+                <Border BackgroundColor="#252537" StrokeThickness="0"
+                        StrokeShape="RoundRectangle 16" Padding="18,16">
+                    <Grid ColumnDefinitions="Auto,*" ColumnSpacing="14">
+                        <Border Grid.Column="0" WidthRequest="40" HeightRequest="40"
+                                BackgroundColor="#7C5CFF" StrokeThickness="0"
+                                StrokeShape="RoundRectangle 12">
+                            <Label Text="1" FontSize="18" FontAttributes="Bold"
+                                   TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Border>
+                        <VerticalStackLayout Grid.Column="1" Spacing="3" VerticalOptions="Center">
+                            <Label Text="Log your habits daily" FontSize="16"
+                                   FontAttributes="Bold" TextColor="White"/>
+                            <Label Text="Fill in name, duration, date, category and mark it good or bad."
+                                   FontSize="13" TextColor="#B4B4C8" LineBreakMode="WordWrap"/>
+                        </VerticalStackLayout>
+                    </Grid>
+                </Border>
+
+                <Border BackgroundColor="#252537" StrokeThickness="0"
+                        StrokeShape="RoundRectangle 16" Padding="18,16">
+                    <Grid ColumnDefinitions="Auto,*" ColumnSpacing="14">
+                        <Border Grid.Column="0" WidthRequest="40" HeightRequest="40"
+                                BackgroundColor="#00D9A3" StrokeThickness="0"
+                                StrokeShape="RoundRectangle 12">
+                            <Label Text="2" FontSize="18" FontAttributes="Bold"
+                                   TextColor="#13131F" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Border>
+                        <VerticalStackLayout Grid.Column="1" Spacing="3" VerticalOptions="Center">
+                            <Label Text="Check your Progress ring" FontSize="16"
+                                   FontAttributes="Bold" TextColor="White"/>
+                            <Label Text="The animated ring fills up as you log habits each week."
+                                   FontSize="13" TextColor="#B4B4C8" LineBreakMode="WordWrap"/>
+                        </VerticalStackLayout>
+                    </Grid>
+                </Border>
+
+                <Border BackgroundColor="#252537" StrokeThickness="0"
+                        StrokeShape="RoundRectangle 16" Padding="18,16">
+                    <Grid ColumnDefinitions="Auto,*" ColumnSpacing="14">
+                        <Border Grid.Column="0" WidthRequest="40" HeightRequest="40"
+                                BackgroundColor="#FFB547" StrokeThickness="0"
+                                StrokeShape="RoundRectangle 12">
+                            <Label Text="3" FontSize="18" FontAttributes="Bold"
+                                   TextColor="#13131F" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Border>
+                        <VerticalStackLayout Grid.Column="1" Spacing="3" VerticalOptions="Center">
+                            <Label Text="Browse your History" FontSize="16"
+                                   FontAttributes="Bold" TextColor="White"/>
+                            <Label Text="Entries are color-coded: green for good habits, red for bad."
+                                   FontSize="13" TextColor="#B4B4C8" LineBreakMode="WordWrap"/>
+                        </VerticalStackLayout>
+                    </Grid>
+                </Border>
+
+                <Border BackgroundColor="#252537" StrokeThickness="0"
+                        StrokeShape="RoundRectangle 16" Padding="18,16">
+                    <Grid ColumnDefinitions="Auto,*" ColumnSpacing="14">
+                        <Border Grid.Column="0" WidthRequest="40" HeightRequest="40"
+                                BackgroundColor="#FF5C7A" StrokeThickness="0"
+                                StrokeShape="RoundRectangle 12">
+                            <Label Text="4" FontSize="18" FontAttributes="Bold"
+                                   TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Border>
+                        <VerticalStackLayout Grid.Column="1" Spacing="3" VerticalOptions="Center">
+                            <Label Text="Get Insights on bad habits" FontSize="16"
+                                   FontAttributes="Bold" TextColor="White"/>
+                            <Label Text="The Insights page gives you personalized tips and action steps to fix bad habits."
+                                   FontSize="13" TextColor="#B4B4C8" LineBreakMode="WordWrap"/>
+                        </VerticalStackLayout>
+                    </Grid>
+                </Border>
+
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

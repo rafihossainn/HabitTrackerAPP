@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="456" height="456" viewBox="0 0 456 456" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Warm flame gradient — yellow at tip, deep orange at base -->
+    <linearGradient id="flameGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#FFE566"/>
+      <stop offset="45%"  stop-color="#FF8C00"/>
+      <stop offset="100%" stop-color="#FF3D00"/>
+    </linearGradient>
+    <!-- Soft inner glow gradient -->
+    <linearGradient id="innerGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#FFFDE0" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#FFD54F" stop-opacity="0.6"/>
+    </linearGradient>
+    <!-- Drop shadow filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Outer flame (main body) -->
+  <path d="
+    M 228 98
+    C 264 128 304 170 288 220
+    C 316 192 322 160 306 126
+    C 344 170 340 232 314 272
+    C 340 298 344 338 322 372
+    C 300 402 266 416 228 416
+    C 190 416 156 402 134 372
+    C 112 338 116 298 142 272
+    C 116 232 112 170 150 126
+    C 134 160 140 192 168 220
+    C 152 170 192 128 228 98 Z
+  " fill="url(#flameGrad)" filter="url(#glow)"/>
+
+  <!-- Inner flame highlight (white-yellow core) -->
+  <path d="
+    M 228 175
+    C 246 192 264 215 260 240
+    C 276 224 279 205 270 186
+    C 290 210 286 242 270 264
+    C 282 278 284 302 270 318
+    C 258 334 244 342 228 342
+    C 212 342 198 334 186 318
+    C 172 302 174 278 186 264
+    C 170 242 166 210 186 186
+    C 177 205 180 224 196 240
+    C 192 215 210 192 228 175 Z
+  " fill="url(#innerGrad)"/>
+
+  <!-- Bold white checkmark overlaid on flame -->
+  <path d="M 175 298 L 214 338 L 300 238"
+        fill="none"
+        stroke="white"
+        stroke-width="28"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+
+  <!-- Three small streak dots below flame base -->
+  <circle cx="188" cy="432" r="10" fill="white" opacity="0.5"/>
+  <circle cx="228" cy="436" r="13" fill="white" opacity="0.8"/>
+  <circle cx="268" cy="432" r="10" fill="white" opacity="0.5"/>
+
+</svg>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:pages="clr-namespace:HabitTrackerApp.Pages"
+       x:Class="HabitTrackerApp.AppShell"
+       Shell.FlyoutBehavior="Flyout"
+       Shell.BackgroundColor="#1C1C2A"
+       Shell.ForegroundColor="White"
+       Shell.TitleColor="White"
+       Shell.NavBarHasShadow="False"
+       FlyoutBackgroundColor="#1C1C2A"
+       Title="Habit Tracker">
+
+    <Shell.FlyoutHeaderBehavior>Fixed</Shell.FlyoutHeaderBehavior>
+
+    <Shell.FlyoutHeader>
+        <Grid HeightRequest="160" BackgroundColor="#7C5CFF">
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#7C5CFF" Offset="0"/>
+                    <GradientStop Color="#4A2FD4" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="6" Padding="20,0">
+                <Label Text="🔥" FontSize="36" HorizontalOptions="Center"/>
+                <Label Text="HABIT TRACKER" FontAttributes="Bold" FontSize="18"
+                       TextColor="White" HorizontalOptions="Center" CharacterSpacing="3"/>
+                <Label Text="Build better days" FontSize="13" TextColor="#E0D8FF" HorizontalOptions="Center"/>
+            </VerticalStackLayout>
+        </Grid>
+    </Shell.FlyoutHeader>
+
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid HeightRequest="56" Padding="16,0">
+                <Label Text="{Binding Title}"
+                       TextColor="White"
+                       FontSize="16"
+                       VerticalOptions="Center"/>
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+
+    <FlyoutItem Title="🏠  Home">
+        <ShellContent Route="home" ContentTemplate="{DataTemplate pages:HomePage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="📊  Progress">
+        <ShellContent Route="progress" ContentTemplate="{DataTemplate pages:ProgressPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="✏️  Log Habit">
+        <ShellContent Route="log" ContentTemplate="{DataTemplate pages:LogPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="📋  History">
+        <ShellContent Route="history" ContentTemplate="{DataTemplate pages:HistoryPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="💡  Insights">
+        <ShellContent Route="insights" ContentTemplate="{DataTemplate pages:InsightsPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="▶️  Tutorial">
+        <ShellContent Route="tutorial" ContentTemplate="{DataTemplate pages:TutorialPage}" />
+    </FlyoutItem>
+
+</Shell>

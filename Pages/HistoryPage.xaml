@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:HabitTrackerApp.Models"
+             x:Class="HabitTrackerApp.Pages.HistoryPage"
+             Title="History"
+             BackgroundColor="#13131F">
+
+    <Grid RowDefinitions="Auto,Auto,*">
+
+        <!-- Header -->
+        <Grid Grid.Row="0" HeightRequest="130" BackgroundColor="#7C5CFF">
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#7C5CFF" Offset="0"/>
+                    <GradientStop Color="#4A2FD4" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <VerticalStackLayout VerticalOptions="Center" Padding="24,0" Spacing="4">
+                <Label Text="📋 Habit History" FontSize="26" FontAttributes="Bold" TextColor="White"/>
+                <Label Text="All your logged habits" FontSize="13" TextColor="#E0D8FF"/>
+            </VerticalStackLayout>
+        </Grid>
+
+        <!-- Summary Bar -->
+        <Grid Grid.Row="1" ColumnDefinitions="*,*" Margin="18,14,18,0" ColumnSpacing="12">
+            <Border Grid.Column="0" BackgroundColor="#1A3D35" StrokeThickness="0"
+                    StrokeShape="RoundRectangle 14" Padding="14,10">
+                <StackLayout Orientation="Horizontal" Spacing="8">
+                    <Label Text="✅" FontSize="18"/>
+                    <VerticalStackLayout>
+                        <Label x:Name="GoodCountLabel" Text="0" FontSize="20"
+                               FontAttributes="Bold" TextColor="#00D9A3"/>
+                        <Label Text="Good habits" FontSize="11" TextColor="#7A7A8E"/>
+                    </VerticalStackLayout>
+                </StackLayout>
+            </Border>
+            <Border Grid.Column="1" BackgroundColor="#3D1A22" StrokeThickness="0"
+                    StrokeShape="RoundRectangle 14" Padding="14,10">
+                <StackLayout Orientation="Horizontal" Spacing="8">
+                    <Label Text="⚠️" FontSize="18"/>
+                    <VerticalStackLayout>
+                        <Label x:Name="BadCountLabel" Text="0" FontSize="20"
+                               FontAttributes="Bold" TextColor="#FF5C7A"/>
+                        <Label Text="Bad habits" FontSize="11" TextColor="#7A7A8E"/>
+                    </VerticalStackLayout>
+                </StackLayout>
+            </Border>
+        </Grid>
+
+        <!-- List -->
+        <CollectionView Grid.Row="2" x:Name="HabitList" SelectionMode="None" Margin="18,14,18,0">
+            <CollectionView.EmptyView>
+                <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="8" Padding="40">
+                    <Label Text="📭" FontSize="48" HorizontalOptions="Center"/>
+                    <Label Text="No habits logged yet." FontSize="16" TextColor="#7A7A8E"
+                           HorizontalOptions="Center"/>
+                    <Label Text="Go to Log Habit to add your first entry."
+                           FontSize="13" TextColor="#4A4A60" HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+            </CollectionView.EmptyView>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Habit">
+                    <Border Margin="0,0,0,12"
+                            BackgroundColor="#252537"
+                            StrokeThickness="2"
+                            Stroke="{Binding TypeColorHex}"
+                            StrokeShape="RoundRectangle 16"
+                            Padding="16,14">
+                        <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
+                            <Border Grid.Column="0"
+                                    WidthRequest="44" HeightRequest="44"
+                                    BackgroundColor="{Binding CardAccentHex}"
+                                    StrokeThickness="0"
+                                    StrokeShape="RoundRectangle 12">
+                                <Label Text="{Binding TypeLabel}"
+                                       FontSize="11" FontAttributes="Bold"
+                                       TextColor="{Binding TypeColorHex}"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"/>
+                            </Border>
+                            <VerticalStackLayout Grid.Column="1" Spacing="2" VerticalOptions="Center">
+                                <Label Text="{Binding Name}" FontSize="16"
+                                       FontAttributes="Bold" TextColor="White"/>
+                                <Label Text="{Binding Category}" FontSize="12"
+                                       TextColor="#7A7A8E"/>
+                                <Label Text="{Binding DateDisplay}" FontSize="12"
+                                       TextColor="#4A4A60"/>
+                            </VerticalStackLayout>
+                            <Label Grid.Column="2"
+                                   Text="{Binding DurationDisplay}"
+                                   TextColor="{Binding TypeColorHex}"
+                                   FontAttributes="Bold"
+                                   FontSize="14"
+                                   VerticalOptions="Center"/>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </Grid>
+</ContentPage>

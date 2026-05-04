@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HabitTrackerApp.Pages.LogPage"
+             Title="Log Habit"
+             BackgroundColor="#13131F">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="0">
+
+            <!-- Header -->
+            <Grid HeightRequest="130" BackgroundColor="#7C5CFF">
+                <Grid.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#7C5CFF" Offset="0"/>
+                        <GradientStop Color="#4A2FD4" Offset="1"/>
+                    </LinearGradientBrush>
+                </Grid.Background>
+                <VerticalStackLayout VerticalOptions="Center" Padding="24,0" Spacing="4">
+                    <Label Text="✏️ Log a Habit" FontSize="26" FontAttributes="Bold" TextColor="White"/>
+                    <Label Text="Saved to local SQLite database" FontSize="13" TextColor="#E0D8FF"/>
+                </VerticalStackLayout>
+            </Grid>
+
+            <VerticalStackLayout Padding="18,20,18,40" Spacing="14">
+
+                <!-- Habit Name -->
+                <Border BackgroundColor="#252537" StrokeThickness="0" StrokeShape="RoundRectangle 16" Padding="18,14">
+                    <VerticalStackLayout Spacing="6">
+                        <Label Text="HABIT NAME" FontSize="11" TextColor="#7A7A8E" CharacterSpacing="2"/>
+                        <Entry x:Name="NameEntry" Placeholder="e.g. Morning run, Smoking, Junk food"
+                               PlaceholderColor="#4A4A60" TextColor="White" FontSize="16"
+                               BackgroundColor="Transparent"/>
+                    </VerticalStackLayout>
+                </Border>
+
+                <!-- Duration -->
+                <Border BackgroundColor="#252537" StrokeThickness="0" StrokeShape="RoundRectangle 16" Padding="18,14">
+                    <VerticalStackLayout Spacing="6">
+                        <Label Text="DURATION (MINUTES)" FontSize="11" TextColor="#7A7A8E" CharacterSpacing="2"/>
+                        <Entry x:Name="DurationEntry" Placeholder="e.g. 30"
+                               PlaceholderColor="#4A4A60" TextColor="White" FontSize="16"
+                               Keyboard="Numeric" BackgroundColor="Transparent"/>
+                    </VerticalStackLayout>
+                </Border>
+
+                <!-- Date -->
+                <Border BackgroundColor="#252537" StrokeThickness="0" StrokeShape="RoundRectangle 16" Padding="18,14">
+                    <VerticalStackLayout Spacing="6">
+                        <Label Text="DATE" FontSize="11" TextColor="#7A7A8E" CharacterSpacing="2"/>
+                        <DatePicker x:Name="DatePick" TextColor="White" BackgroundColor="Transparent" FontSize="16"/>
+                    </VerticalStackLayout>
+                </Border>
+
+                <!-- Category -->
+                <Border BackgroundColor="#252537" StrokeThickness="0" StrokeShape="RoundRectangle 16" Padding="18,14">
+                    <VerticalStackLayout Spacing="6">
+                        <Label Text="CATEGORY" FontSize="11" TextColor="#7A7A8E" CharacterSpacing="2"/>
+                        <Picker x:Name="CategoryPicker" TextColor="White" BackgroundColor="Transparent" FontSize="16"
+                                Title="Select a category" TitleColor="#4A4A60">
+                            <Picker.Items>
+                                <x:String>Exercise</x:String>
+                                <x:String>Diet &amp; Nutrition</x:String>
+                                <x:String>Sleep</x:String>
+                                <x:String>Screen Time</x:String>
+                                <x:String>Mental Health</x:String>
+                                <x:String>Smoking / Vaping</x:String>
+                                <x:String>Alcohol</x:String>
+                                <x:String>Productivity</x:String>
+                                <x:String>Social</x:String>
+                                <x:String>General</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </VerticalStackLayout>
+                </Border>
+
+                <!-- Good / Bad Toggle -->
+                <Label Text="HABIT TYPE" FontSize="11" TextColor="#7A7A8E" CharacterSpacing="2" Margin="4,4,0,0"/>
+                <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
+                    <Border x:Name="GoodBorder" Grid.Column="0"
+                            BackgroundColor="#1A3D35"
+                            Stroke="#00D9A3" StrokeThickness="2"
+                            StrokeShape="RoundRectangle 16" Padding="0,18">
+                        <VerticalStackLayout Spacing="4" HorizontalOptions="Center">
+                            <Label Text="✅" FontSize="28" HorizontalOptions="Center"/>
+                            <Label Text="Good Habit" FontSize="14" FontAttributes="Bold"
+                                   TextColor="#00D9A3" HorizontalOptions="Center"/>
+                            <Label Text="Something healthy" FontSize="11"
+                                   TextColor="#7A7A8E" HorizontalOptions="Center"/>
+                        </VerticalStackLayout>
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnGoodTapped"/>
+                        </Border.GestureRecognizers>
+                    </Border>
+
+                    <Border x:Name="BadBorder" Grid.Column="1"
+                            BackgroundColor="#252537"
+                            Stroke="#2F2F44" StrokeThickness="2"
+                            StrokeShape="RoundRectangle 16" Padding="0,18">
+                        <VerticalStackLayout Spacing="4" HorizontalOptions="Center">
+                            <Label Text="⚠️" FontSize="28" HorizontalOptions="Center"/>
+                            <Label Text="Bad Habit" FontSize="14" FontAttributes="Bold"
+                                   TextColor="#FF5C7A" HorizontalOptions="Center"/>
+                            <Label Text="Something to fix" FontSize="11"
+                                   TextColor="#7A7A8E" HorizontalOptions="Center"/>
+                        </VerticalStackLayout>
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnBadTapped"/>
+                        </Border.GestureRecognizers>
+                    </Border>
+                </Grid>
+
+                <!-- Status -->
+                <Label x:Name="StatusLabel" Text="" TextColor="#00D9A3"
+                       FontSize="14" HorizontalOptions="Center" Margin="0,4"/>
+
+                <!-- Save Button -->
+                <Border BackgroundColor="#7C5CFF" StrokeThickness="0"
+                        StrokeShape="RoundRectangle 16" Padding="0,16" Margin="0,4">
+                    <Label Text="Save Habit" FontSize="17" FontAttributes="Bold"
+                           TextColor="White" HorizontalOptions="Center"/>
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnSaveClicked"/>
+                    </Border.GestureRecognizers>
+                </Border>
+
+                <Border BackgroundColor="Transparent" Stroke="#2F2F44" StrokeThickness="1"
+                        StrokeShape="RoundRectangle 16" Padding="0,16">
+                    <Label Text="View History" FontSize="16" TextColor="White" HorizontalOptions="Center"/>
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnHistoryClicked"/>
+                    </Border.GestureRecognizers>
+                </Border>
+
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

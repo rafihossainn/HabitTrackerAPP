@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HabitTrackerApp.Pages.OnboardingPage"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#13131F">
+
+    <Grid RowDefinitions="*,Auto,Auto,Auto">
+
+        <!-- All 4 slides stacked; code-behind shows one at a time -->
+
+        <!-- SLIDE 0: Welcome -->
+        <ScrollView x:Name="Slide0" Grid.Row="0">
+            <VerticalStackLayout Padding="36,60,36,20" Spacing="24" VerticalOptions="Center">
+                <Border WidthRequest="160" HeightRequest="160" StrokeThickness="0"
+                        StrokeShape="RoundRectangle 40" HorizontalOptions="Center">
+                    <Border.Background>
+                        <RadialGradientBrush Center="0.35,0.3" Radius="0.8">
+                            <GradientStop Color="#9B6FFF" Offset="0"/>
+                            <GradientStop Color="#2E0FA5" Offset="1"/>
+                        </RadialGradientBrush>
+                    </Border.Background>
+                    <Label Text="🔥" FontSize="72" HorizontalOptions="Center" VerticalOptions="Center"/>
+                </Border>
+                <Label Text="Welcome to" FontSize="16" TextColor="#B4B4C8" HorizontalOptions="Center"/>
+                <Label Text="Habit Tracker" FontSize="36" FontAttributes="Bold"
+                       TextColor="White" HorizontalOptions="Center"/>
+                <Label Text="Build streaks. Break bad habits. Become the best version of yourself — one day at a time."
+                       FontSize="16" TextColor="#B4B4C8" HorizontalTextAlignment="Center"
+                       HorizontalOptions="Center" LineBreakMode="WordWrap"/>
+                <Border BackgroundColor="#1C1C2E" StrokeThickness="1" Stroke="#2F2F44"
+                        StrokeShape="RoundRectangle 14" Padding="16,12" Margin="0,8,0,0">
+                    <Label Text="👆 Swipe left or tap Next to begin the tour"
+                           FontSize="13" TextColor="#7A7A8E" HorizontalOptions="Center"
+                           HorizontalTextAlignment="Center"/>
+                </Border>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- SLIDE 1: Log Habits -->
+        <ScrollView x:Name="Slide1" Grid.Row="0" IsVisible="False">
+            <VerticalStackLayout Padding="36,50,36,20" Spacing="20">
+                <Label Text="✏️" FontSize="90" HorizontalOptions="Center"/>
+                <Label Text="Log Your Habits" FontSize="32" FontAttributes="Bold"
+                       TextColor="White" HorizontalOptions="Center"/>
+                <Label Text="Tap Log Habit to record what you did each day — fill in the name, duration, category, and date."
+                       FontSize="15" TextColor="#B4B4C8" HorizontalTextAlignment="Center"
+                       HorizontalOptions="Center" LineBreakMode="WordWrap"/>
+
+                <Grid ColumnDefinitions="*,*" ColumnSpacing="12" Margin="0,10,0,0">
+                    <Border Grid.Column="0" BackgroundColor="#1A3D35" StrokeThickness="2"
+                            Stroke="#00D9A3" StrokeShape="RoundRectangle 16" Padding="14">
+                        <VerticalStackLayout Spacing="8" HorizontalOptions="Center">
+                            <Label Text="✅" FontSize="32" HorizontalOptions="Center"/>
+                            <Label Text="Good Habit" FontSize="14" FontAttributes="Bold"
+                                   TextColor="#00D9A3" HorizontalOptions="Center"/>
+                            <Label Text="Exercise, reading, sleep, hydration..."
+                                   FontSize="11" TextColor="#7A7A8E" HorizontalOptions="Center"
+                                   HorizontalTextAlignment="Center"/>
+                        </VerticalStackLayout>
+                    </Border>
+                    <Border Grid.Column="1" BackgroundColor="#3D1A22" StrokeThickness="2"
+                            Stroke="#FF5C7A" StrokeShape="RoundRectangle 16" Padding="14">
+                        <VerticalStackLayout Spacing="8" HorizontalOptions="Center">
+                            <Label Text="⚠️" FontSize="32" HorizontalOptions="Center"/>
+                            <Label Text="Bad Habit" FontSize="14" FontAttributes="Bold"
+                                   TextColor="#FF5C7A" HorizontalOptions="Center"/>
+                            <Label Text="Smoking, junk food, alcohol, screen time..."
+                                   FontSize="11" TextColor="#7A7A8E" HorizontalOptions="Center"
+                                   HorizontalTextAlignment="Center"/>
+                        </VerticalStackLayout>
+                    </Border>
+                </Grid>
+
+                <Border BackgroundColor="#252537" StrokeThickness="0"
+                        StrokeShape="RoundRectangle 14" Padding="16,12">
+                    <Label Text="💾  All data is saved permanently to a local database on your device — no account needed."
+                           FontSize="13" TextColor="#B4B4C8" LineBreakMode="WordWrap"/>
+                </Border>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- SLIDE 2: Progress Ring -->
+        <ScrollView x:Name="Slide2" Grid.Row="0" IsVisible="False">
+            <VerticalStackLayout Padding="36,50,36,20" Spacing="20">
+                <Label Text="📊" FontSize="90" HorizontalOptions="Center"/>
+                <Label Text="Track Your Progress" FontSize="32" FontAttributes="Bold"
+                       TextColor="White" HorizontalOptions="Center"/>
+                <Label Text="Your Progress page shows a live animated ring that fills as you hit your weekly habit goal."
+                       FontSize="15" TextColor="#B4B4C8" HorizontalTextAlignment="Center"
+                       HorizontalOptions="Center" LineBreakMode="WordWrap"/>
+
+                <Border BackgroundColor="#252537" StrokeThickness="0"
+                        StrokeShape="RoundRectangle 16" Padding="18,14">
+                    <Grid ColumnDefinitions="Auto,*" ColumnSpacing="14">
+                        <Border Grid.Column="0" WidthRequest="48" HeightRequest="48"
+                                BackgroundColor="#7C5CFF" StrokeThickness="0"
+                                StrokeShape="RoundRectangle 12">
+                            <Label Text="🎯" FontSize="24" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Border>
+                        <VerticalStackLayout Grid.Column="1" Spacing="4" VerticalOptions="Center">
+                            <Label Text="Weekly goal: 7 habits" FontSize="15"
+                                   FontAttributes="Bold" TextColor="White"/>
+                            <Label Text="Log one habit per day to fill the ring completely by the end of the week."
+                                   FontSize="13" TextColor="#B4B4C8" LineBreakMode="WordWrap"/>
+                        </VerticalStackLayout>
+                    </Grid>
+                </Border>
+
+                <Border BackgroundColor="#252537" StrokeThickness="0"
+                        StrokeShape="RoundRectangle 16" Padding="18,14">
+                    <Grid ColumnDefinitions="Auto,*" ColumnSpacing="14">
+                        <Border Grid.Column="0" WidthRequest="48" HeightRequest="48"
+                                BackgroundColor="#1A3D35" StrokeThickness="0"
+                                StrokeShape="RoundRectangle 12">
+                            <Label Text="📋" FontSize="24" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Border>
+                        <VerticalStackLayout Grid.Column="1" Spacing="4" VerticalOptions="Center">
+                            <Label Text="History is color-coded" FontSize="15"
+                                   FontAttributes="Bold" TextColor="White"/>
+                            <Label Text="Green border = good habit. Red border = bad habit. Easy to spot patterns."
+                                   FontSize="13" TextColor="#B4B4C8" LineBreakMode="WordWrap"/>
+                        </VerticalStackLayout>
+                    </Grid>
+                </Border>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- SLIDE 3: Insights + Get Started -->
+        <ScrollView x:Name="Slide3" Grid.Row="0" IsVisible="False">
+            <VerticalStackLayout Padding="36,50,36,20" Spacing="20">
+                <Label Text="💡" FontSize="90" HorizontalOptions="Center"/>
+                <Label Text="Get Personalised Tips" FontSize="32" FontAttributes="Bold"
+                       TextColor="White" HorizontalOptions="Center"/>
+                <Label Text="The Insights page analyses every bad habit you log and gives you a specific plan to fix it."
+                       FontSize="15" TextColor="#B4B4C8" HorizontalTextAlignment="Center"
+                       HorizontalOptions="Center" LineBreakMode="WordWrap"/>
+
+                <Border BackgroundColor="#3D1A22" StrokeThickness="2" Stroke="#FF5C7A"
+                        StrokeShape="RoundRectangle 16" Padding="18,14">
+                    <VerticalStackLayout Spacing="8">
+                        <Label Text="⚠️ Example: Smoking logged" FontSize="14"
+                               FontAttributes="Bold" TextColor="#FF5C7A"/>
+                        <BoxView HeightRequest="1" BackgroundColor="#4A2030"/>
+                        <Label Text="💡 Why it's harmful and how to quit"
+                               FontSize="13" TextColor="#B4B4C8"/>
+                        <Label Text="✔ Set a quit date  ✔ Use nicotine patches  ✔ Avoid triggers"
+                               FontSize="12" TextColor="#FFB547" LineBreakMode="WordWrap"/>
+                    </VerticalStackLayout>
+                </Border>
+
+                <Border BackgroundColor="#1C2040" StrokeThickness="1" Stroke="#7C5CFF"
+                        StrokeShape="RoundRectangle 16" Padding="18,14">
+                    <StackLayout Orientation="Horizontal" Spacing="12">
+                        <Label Text="🏆" FontSize="24" VerticalOptions="Center"/>
+                        <Label Text="10 habit categories — each with its own custom tips and action steps tailored to that habit."
+                               FontSize="13" TextColor="#B4B4C8" LineBreakMode="WordWrap"
+                               HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </Border>
+
+                <Label Text="You're all set! Tap Get Started below." FontSize="15"
+                       TextColor="#7A7A8E" HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"/>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- Dot indicators -->
+        <HorizontalStackLayout Grid.Row="1" HorizontalOptions="Center"
+                               Spacing="10" Margin="0,4,0,24">
+            <Ellipse x:Name="Dot0" WidthRequest="12" HeightRequest="12" Fill="#7C5CFF"/>
+            <Ellipse x:Name="Dot1" WidthRequest="10" HeightRequest="10" Fill="#2F2F44"/>
+            <Ellipse x:Name="Dot2" WidthRequest="10" HeightRequest="10" Fill="#2F2F44"/>
+            <Ellipse x:Name="Dot3" WidthRequest="10" HeightRequest="10" Fill="#2F2F44"/>
+        </HorizontalStackLayout>
+
+        <!-- Primary CTA button -->
+        <Border Grid.Row="2" x:Name="NextBtn"
+                BackgroundColor="#7C5CFF" StrokeThickness="0"
+                StrokeShape="RoundRectangle 18" Padding="0,18" Margin="36,0">
+            <Label x:Name="NextLabel" Text="Next  →" FontSize="17"
+                   FontAttributes="Bold" TextColor="White" HorizontalOptions="Center"/>
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnNextTapped"/>
+            </Border.GestureRecognizers>
+        </Border>
+
+        <!-- Skip -->
+        <Label Grid.Row="3" Text="Skip" FontSize="14" TextColor="#4A4A60"
+               HorizontalOptions="Center" Margin="0,12,0,36">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnSkipTapped"/>
+            </Label.GestureRecognizers>
+        </Label>
+
+    </Grid>
+</ContentPage>

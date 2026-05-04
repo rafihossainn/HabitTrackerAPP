@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HabitTrackerApp.Pages.ProgressPage"
+             Title="Progress">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="22,28,22,40" Spacing="22">
+
+            <Label Text="THIS WEEK" Style="{StaticResource Caption}" />
+            <Label Text="Weekly Goal Ring" Style="{StaticResource H1}" />
+            <Label Text="Animates from 0 to your current weekly habit completion."
+                   Style="{StaticResource Body}" />
+
+            <Border Style="{StaticResource Card}" Padding="6">
+                <Grid HeightRequest="320">
+                    <GraphicsView x:Name="RingView" />
+                    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="2">
+                        <Label x:Name="PercentLabel"
+                               Text="0%"
+                               FontSize="56"
+                               FontAttributes="Bold"
+                               TextColor="{StaticResource TextPrimary}"
+                               HorizontalOptions="Center"/>
+                        <Label x:Name="SubLabel"
+                               Text="of weekly goal"
+                               Style="{StaticResource Body}"
+                               HorizontalOptions="Center"/>
+                    </VerticalStackLayout>
+                </Grid>
+            </Border>
+
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
+                <Border Grid.Column="0" Style="{StaticResource Card}">
+                    <VerticalStackLayout Spacing="4">
+                        <Label Text="LOGGED" Style="{StaticResource Caption}" />
+                        <Label x:Name="LoggedLabel" Text="0" Style="{StaticResource H1}" />
+                        <Label Text="this week" Style="{StaticResource Body}" />
+                    </VerticalStackLayout>
+                </Border>
+                <Border Grid.Column="1" Style="{StaticResource Card}">
+                    <VerticalStackLayout Spacing="4">
+                        <Label Text="TOTAL MIN" Style="{StaticResource Caption}" />
+                        <Label x:Name="MinutesLabel" Text="0" Style="{StaticResource H1}" />
+                        <Label Text="all time" Style="{StaticResource Body}" />
+                    </VerticalStackLayout>
+                </Border>
+            </Grid>
+
+            <Button Text="Replay Animation" Style="{StaticResource PrimaryBtn}"
+                    Clicked="OnReplay" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:HabitTrackerApp.Pages"
+             x:Class="HabitTrackerApp.Pages.InsightsPage"
+             Title="Insights"
+             BackgroundColor="#13131F">
+
+    <Grid RowDefinitions="Auto,*">
+
+        <!-- Header -->
+        <Grid Grid.Row="0" HeightRequest="130">
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#FF5C7A" Offset="0"/>
+                    <GradientStop Color="#C0394F" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <VerticalStackLayout VerticalOptions="Center" Padding="24,0" Spacing="4">
+                <Label Text="💡 Insights" FontSize="26" FontAttributes="Bold" TextColor="White"/>
+                <Label Text="Tips to fix your bad habits" FontSize="13" TextColor="#FFD0D8"/>
+            </VerticalStackLayout>
+        </Grid>
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="18,16,18,40" Spacing="14">
+
+                <!-- No bad habits message -->
+                <Border x:Name="NoBadPanel" BackgroundColor="#1A3D35" StrokeThickness="0"
+                        StrokeShape="RoundRectangle 16" Padding="20" IsVisible="False">
+                    <VerticalStackLayout Spacing="8" HorizontalOptions="Center">
+                        <Label Text="🎉" FontSize="40" HorizontalOptions="Center"/>
+                        <Label Text="No bad habits logged!" FontSize="18"
+                               FontAttributes="Bold" TextColor="#00D9A3" HorizontalOptions="Center"/>
+                        <Label Text="Keep it up — all your habits are healthy ones."
+                               FontSize="14" TextColor="#B4B4C8" HorizontalOptions="Center"/>
+                    </VerticalStackLayout>
+                </Border>
+
+                <!-- Bad habits list with tips -->
+                <CollectionView x:Name="TipsList" SelectionMode="None">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="local:HabitTip">
+                            <Border Margin="0,0,0,14" BackgroundColor="#252537"
+                                    StrokeThickness="2" Stroke="#FF5C7A"
+                                    StrokeShape="RoundRectangle 18" Padding="18">
+                                <VerticalStackLayout Spacing="10">
+                                    <!-- Habit name row -->
+                                    <Grid ColumnDefinitions="Auto,*">
+                                        <Border Grid.Column="0" BackgroundColor="#3D1A22"
+                                                StrokeThickness="0" StrokeShape="RoundRectangle 10"
+                                                Padding="10,6">
+                                            <Label Text="⚠️ BAD" FontSize="11" FontAttributes="Bold"
+                                                   TextColor="#FF5C7A"/>
+                                        </Border>
+                                        <Label Grid.Column="1" Text="{Binding HabitName}"
+                                               FontSize="17" FontAttributes="Bold"
+                                               TextColor="White" VerticalOptions="Center"
+                                               Margin="10,0,0,0"/>
+                                    </Grid>
+
+                                    <!-- Category badge -->
+                                    <Label Text="{Binding Category}" FontSize="12"
+                                           TextColor="#7A7A8E"/>
+
+                                    <!-- Divider -->
+                                    <BoxView HeightRequest="1" BackgroundColor="#2F2F44"/>
+
+                                    <!-- Tips -->
+                                    <Label Text="💡 HOW TO FIX IT" FontSize="11"
+                                           TextColor="#FF5C7A" CharacterSpacing="2"
+                                           FontAttributes="Bold"/>
+                                    <Label Text="{Binding TipText}" FontSize="14"
+                                           TextColor="#B4B4C8" LineBreakMode="WordWrap"/>
+
+                                    <!-- Steps -->
+                                    <Label Text="✔ ACTION STEPS" FontSize="11"
+                                           TextColor="#FFB547" CharacterSpacing="2"
+                                           FontAttributes="Bold"/>
+                                    <Label Text="{Binding ActionSteps}" FontSize="13"
+                                           TextColor="#B4B4C8" LineBreakMode="WordWrap"/>
+                                </VerticalStackLayout>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <!-- General tips always shown -->
+                <Label Text="GENERAL WELLNESS TIPS" FontSize="11" TextColor="#7A7A8E"
+                       CharacterSpacing="2" Margin="0,8,0,0"/>
+
+                <Border BackgroundColor="#1C2040" StrokeThickness="0"
+                        StrokeShape="RoundRectangle 16" Padding="18">
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="🌙  Get 7-9 hours of sleep" FontSize="14" TextColor="White"/>
+                        <BoxView HeightRequest="1" BackgroundColor="#2F2F44"/>
+                        <Label Text="💧  Drink at least 8 glasses of water daily" FontSize="14" TextColor="White"/>
+                        <BoxView HeightRequest="1" BackgroundColor="#2F2F44"/>
+                        <Label Text="🏃  Move your body for at least 30 min a day" FontSize="14" TextColor="White"/>
+                        <BoxView HeightRequest="1" BackgroundColor="#2F2F44"/>
+                        <Label Text="📵  Limit screen time 1 hour before bed" FontSize="14" TextColor="White"/>
+                        <BoxView HeightRequest="1" BackgroundColor="#2F2F44"/>
+                        <Label Text="🧘  Take 5 minutes to breathe and reset" FontSize="14" TextColor="White"/>
+                    </VerticalStackLayout>
+                </Border>
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
