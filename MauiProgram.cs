@@ -12,7 +12,13 @@ public static class MauiProgram
             .UseMauiApp<App>()
             .UseMauiCommunityToolkit()
             .UseMauiCommunityToolkitMediaElement()
-            .ConfigureFonts(fonts => { });
+            .ConfigureFonts(fonts => { })
+            .ConfigureMauiHandlers(handlers =>
+            {
+#if ANDROID
+                handlers.AddHandler<Microsoft.Maui.Controls.WebView, CustomWebViewHandler>();
+#endif
+            });
 
 #if DEBUG
         builder.Logging.AddDebug();

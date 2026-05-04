@@ -3,7 +3,7 @@ namespace HabitTrackerApp.Pages;
 public partial class TutorialPage : ContentPage
 {
     // Atomic Habits summary video — swap the ID for any YouTube video you like
-    private const string VideoId = "PZ7lDrwYdZc";
+    private const string VideoId = "DY15PQBUuvQ";
 
     public TutorialPage()
     {
