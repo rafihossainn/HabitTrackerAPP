@@ -2,36 +2,29 @@ namespace HabitTrackerApp.Pages;
 
 public partial class TutorialPage : ContentPage
 {
-    // Atomic Habits summary video — swap the ID for any YouTube video you like
+    // YouTube video ID — change to any video. Embed restrictions don't matter,
+    // we open it in the YouTube app or browser instead of embedding.
     private const string VideoId = "DY15PQBUuvQ";
 
     public TutorialPage()
     {
         InitializeComponent();
+
+        // Load the video's official YouTube thumbnail
+        VideoThumbnail.Source = ImageSource.FromUri(
+            new Uri($"https://img.youtube.com/vi/{VideoId}/maxresdefault.jpg"));
     }
 
-    protected override void OnAppearing()
+    private async void OnPlayTapped(object sender, TappedEventArgs e)
     {
-        base.OnAppearing();
-        VideoWebView.Source = new HtmlWebViewSource { Html = BuildHtml(VideoId) };
-    }
-
-    protected override void OnDisappearing()
-    {
-        base.OnDisappearing();
-        VideoWebView.Source = new HtmlWebViewSource
+        var url = $"https://www.youtube.com/watch?v={VideoId}";
+        try
         {
-            Html = "<html><body style='background:#000'></body></html>"
-        };
+            await Launcher.Default.OpenAsync(new Uri(url));
+        }
+        catch (Exception)
+        {
+            await DisplayAlert("Cannot open video", "Please make sure you have a browser or YouTube app installed.", "OK");
+        }
     }
-
-    private static string BuildHtml(string videoId) =>
-        "<html><head>" +
-        "<meta name='viewport' content='width=device-width, initial-scale=1.0'>" +
-        "<style>*{margin:0;padding:0}body{background:#000}iframe{width:100%;height:100vh;border:none}</style>" +
-        "</head><body>" +
-        "<iframe src='https://www.youtube.com/embed/" + videoId + "?playsinline=1&rel=0' " +
-        "allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' " +
-        "allowfullscreen></iframe>" +
-        "</body></html>";
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-x:Class="HabitTrackerApp.Pages.TutorialPage"
+             x:Class="HabitTrackerApp.Pages.TutorialPage"
              Title="Tutorial"
              BackgroundColor="#13131F">
 
@@ -27,13 +27,32 @@ x:Class="HabitTrackerApp.Pages.TutorialPage"
                 <Label Text="WATCH THE OVERVIEW" FontSize="11" TextColor="#7A7A8E"
                        CharacterSpacing="2" Margin="2,0,0,4"/>
 
-                <!-- Video Player -->
+                <!-- Tappable video thumbnail -->
                 <Border BackgroundColor="#000000" StrokeThickness="0"
-                        StrokeShape="RoundRectangle 18" HeightRequest="230">
-                    <WebView x:Name="VideoWebView" HeightRequest="230" BackgroundColor="Black"/>
+                        StrokeShape="RoundRectangle 18" HeightRequest="220">
+                    <Grid>
+                        <Image x:Name="VideoThumbnail" Aspect="AspectFill"/>
+                        <BoxView BackgroundColor="Black" Opacity="0.45"/>
+                        <Border WidthRequest="84" HeightRequest="84"
+                                BackgroundColor="#FF0000"
+                                StrokeThickness="0"
+                                StrokeShape="RoundRectangle 42"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center">
+                            <Label Text="▶" FontSize="40" TextColor="White"
+                                   HorizontalOptions="Center" VerticalOptions="Center"
+                                   Margin="6,0,0,0"/>
+                        </Border>
+                        <Label Text="Tap to play on YouTube"
+                               TextColor="White" FontSize="13" FontAttributes="Bold"
+                               HorizontalOptions="Center" VerticalOptions="End"
+                               Margin="0,0,0,18"/>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnPlayTapped"/>
+                        </Grid.GestureRecognizers>
+                    </Grid>
                 </Border>
 
-                <!-- How to use section -->
                 <Label Text="HOW TO USE THE APP" FontSize="11" TextColor="#7A7A8E"
                        CharacterSpacing="2" Margin="2,8,0,4"/>
 
